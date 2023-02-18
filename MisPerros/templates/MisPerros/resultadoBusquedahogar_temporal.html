@@ -1,0 +1,16 @@
+<p>Datos encontrados en "{{ubicacion}}":</p>
+
+{% if hogar_temporals %}
+
+<ul>
+{% for hogar in hogar_temporals %}
+    <li>Ubicacion: {{hogar.ubicacion}}</li>
+    <li>Datos del hogar: {{hogar.datoshogar}}</li>
+{% endfor %}
+
+
+</ul>
+{% else %}
+<p>No hay datos con esa descripción.</p>
+
+{% endif %}

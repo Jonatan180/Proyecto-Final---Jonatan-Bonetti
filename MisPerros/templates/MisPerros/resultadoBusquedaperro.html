@@ -1,0 +1,18 @@
+<p>Datos encontrados sobre "{{nombre}}":</p>
+
+{% if perros %}
+
+<ul>
+{% for perro in perros %}
+    <li>Nombre: {{perro.nombre}}</li>
+    <li>Datos: {{perro.datos}}</li>
+{% endfor %}
+
+
+</ul>
+{% else %}
+<p>No hay datos con esa descripción.</p>
+
+{% endif %}
+
+<p style="color: red;">{{respuesta}}</p>

@@ -1,0 +1,16 @@
+<p>Datos encontrados sobre "{{nombre}}":</p>
+
+{% if socios %}
+
+<ul>
+{% for socio in socios %}
+    <li>Nombre: {{socio.nombre}}</li>
+    <li>Categoria: {{socio.categoria}}</li>
+{% endfor %}
+
+
+</ul>
+{% else %}
+<p>No hay datos con esa descripción.</p>
+
+{% endif %}
