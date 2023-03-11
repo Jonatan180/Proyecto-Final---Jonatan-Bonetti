@@ -3,11 +3,11 @@
 <html lang="en">
     <head>
         {% load static %}
-        <meta charset="utf-8" />
+        <meta charset="utf-4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Dog House</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -19,16 +19,18 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-light bg-light static-top">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
-                <a class="navbar-brand" href="{% url 'perro' %}">Perros</a>
-                <a class="navbar-brand" href="{% url 'socio' %}">Socios</a>
-                <a class="navbar-brand" href="{% url 'hogartemporal' %}">Hogares temporales</a>
-                <a class="btn btn-primary" href="#NADAAUN">INICIAR</a>
-            </div>
-        </nav>
-
+        {% if request.user.is_authenticated %}
+            <nav class="navbar navbar-light bg-light static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
+                    <a class="navbar-brand" href="{% url 'perro' %}">Perros</a>
+                    <a class="navbar-brand" href="{% url 'socio' %}">Socios</a>
+                    <a class="navbar-brand" href="{% url 'hogartemporal' %}">Hogares temporales</a>
+                    <a class="navbar-brand" href="{% url 'Logout' %}">Cerrar sesión</a>
+                    <a class="btn btn-primary" href="{% url 'EditarPerfil' %}">Editar perfil</a>
+                </div>
+            </nav>
+        {% endif %}
         <!-- Masthead-->
         <header class="masthead">
             <div class="container position-relative">
@@ -36,7 +38,15 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5"> Tercera pre-entrega Bonetti </h1>
+                            <h1 class="mb-5"> Dog House </h1>
+                            {% if request.user.is_authenticated %}
+                                <div class="text-center">
+                                    <h2 class="mb-3"> Usuario: {{user.username}} </h2>
+                                    <img src="{{user.imagen.url}}" width="100%">
+                                </div>
+                                
+
+                            {% endif %}
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -86,4 +96,16 @@
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+    <footer><center>
+        <p>---------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <p><b>  Sobre nosotros:</b>
+        ¡Hola! Un gusto, somos "Dog House", un lugar en el cual intentaremos ayudar a nuestros amigos caninos, proporcionandoles hogares, ya sea temporales o definitivos, esto es el recien el comienzo.
+        En nuestra web tendran la posibilidad de cargar todos los datos y fotos sobre perros sin hogar, para que asi los usuarios puedan interactuar y ayudar.</p>
+        <p>---------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        <p>En principio son dos los integrantes desarrolladores de esta web:</p>
+        <p><b>Jonatan Bonetti:</b> Creador y administrador de la pagina web en su totalidad.</p>
+        <p><b>Bety:</b> Perra, ya con varios años, inspiracion del proyecto y modelo principal en nuestras pruebas.</p>
+        </p>
+        <p>---------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    </center></footer>
 </html>

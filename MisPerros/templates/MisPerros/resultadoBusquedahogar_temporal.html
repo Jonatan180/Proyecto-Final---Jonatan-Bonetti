@@ -1,16 +1,39 @@
-<p>Datos encontrados en "{{ubicacion}}":</p>
+<!DOCTYPE html>
 
-{% if hogar_temporals %}
+<html>
 
-<ul>
-{% for hogar in hogar_temporals %}
-    <li>Ubicacion: {{hogar.ubicacion}}</li>
-    <li>Datos del hogar: {{hogar.datoshogar}}</li>
-{% endfor %}
+<head>
 
+    <title> Buscar hogar </title>
 
-</ul>
-{% else %}
-<p>No hay datos con esa descripción.</p>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-{% endif %}
+</head>
+
+<body>
+    <div class="container text-center pt-5">
+        <h1>Dog House</h1>
+        <p>Un lugar para ellos</p>
+        <div class='jumbotron'>
+            <center>
+        <div class="text-left" style="max-width:500px">
+        <center><p>Datos encontrados en "{{ubicacion}}":</p>
+
+            {% if hogar_temporals %}
+            
+            <ul>
+            {% for hogar in hogar_temporals %}
+                <li>Ubicacion: {{hogar.ubicacion}}</li>
+                <li>Datos del hogar: {{hogar.datoshogar}}</li>
+            {% endfor %}
+            
+            
+            </ul>
+            {% else %}
+            <p>No hay datos con esa descripción.</p>
+            
+            {% endif %}
+            
+            <p style="color: red;">{{respuesta}}</p>
+            <a class="btn" href="http://127.0.0.1:8000/inicio" > Inicio </a></body>
+</html>

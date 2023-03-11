@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Registro socio</title>
+    <title>Confirmación</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -17,14 +17,12 @@
         <div class='jumbotron'>
             <center>
         <div class="text-left" style="max-width:500px">
-        <center>{% if myform1.errors %}
-            <p style="color: red;"> Datos ingresados de manera incorrecta </p>
-            {% endif %}
-            <form action="" method="POST">{% csrf_token %}
-                <table>
-                    {{ myform1.as_table }}
-                </table>
-                <input type="submit", value="Enviar">
-            </form>
+        <center><form method="post">
+            {% csrf_token %}
+            <p>¿Estas seguro que deseas borrar el siguiente socio?:</p>
+            <p></p>
+            <p>"{{object}}"</p>
+            <input type="submit" value="Borrar" />
+        </form>
 </body>
 </html>

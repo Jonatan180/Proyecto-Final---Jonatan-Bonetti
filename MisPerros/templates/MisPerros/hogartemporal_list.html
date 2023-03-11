@@ -4,7 +4,7 @@
 
 <head>
 
-    <title> Buscar socio</title>
+    <title>Lista</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -17,18 +17,19 @@
         <div class='jumbotron'>
             <center>
         <div class="text-left" style="max-width:500px">
-        <center><p>Datos encontrados sobre "{{nombre}}":</p>
-            {% if socios %}
-            <ul>
-            {% for socio in socios %}
-                <li>Nombre: {{socio.nombre}}</li>
-                <li>Categoria: {{socio.categoria}}</li>
-            {% endfor %}
+        <center><h1> Hogares Temporales </h1>
+            <center><ul>
+                {% for hogar in object_list %}
+                    <li>
+                        <p>Ubicacion: "{{hogar.ubicacion}}":
+                            <a href="{% url 'Detailhogar' hogar.id %}"> Ver </a>
+                            <a href="{% url 'Edithogar' hogar.id %}"> Editar </a>
+                            <a href="{% url 'Deletehogar' hogar.id %}"> Borrar </a>
+                        </p>
+                    </li>
+        
+                {% endfor %}
             </ul>
-            {% else %}
-            <p>No hay datos con esa descripción.</p>
-            {% endif %}
-            <p style="color: red;">{{respuesta}}</p>
             <a class="btn" href="http://127.0.0.1:8000/inicio" > Inicio </a>
 </body>
 </html>
