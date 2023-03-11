@@ -1,4 +1,4 @@
-# Tercera-Pre-Entrega-Bonetti
+# Proyecto Final -Bonetti
 Este proyecto se trata de una página web, destinada a un hipotético caso, en el cual tenemos una web con el fin de poder ayudar a los perros sin hogar.
 
 Conteniendo en si 3 clases con las que podremos interactuar:
@@ -10,7 +10,7 @@ Conteniendo en si 3 clases con las que podremos interactuar:
 -Hogares temporales: Se cargarán los datos de los hogares temporales de los perros
 
 
-Primeramente, al abrir nuestra página web estaremos ubicados en la página de inicio, a partir de la cual nos podremos dirigir a cualquiera de las ventanas que nos permitirán la interacción con datos de las clases.
+Primeramente, contamos con un sistema de registro y logueo, una vez logueado, al abrir nuestra página web estaremos ubicados en la página de inicio, a partir de la cual nos podremos dirigir a cualquiera de las ventanas que nos permitirán la interacción con datos de las clases.
 
 Una vez ubicados en cualquiera de nuestras ventanas de clases podremos interactuar con dicha clase, ya sea cargando nuevos datos, o consultando la existencia de datos, las 3 ventanas de clases tienen un comportamiento muy similar.
 
